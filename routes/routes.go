@@ -7,10 +7,10 @@ import (
 
 func HandleRequest() {
 
-	http.HandleFunc(
-		"/",
-		controllers.Home,
-	)
+	http.HandleFunc("/", controllers.Home)
+
+	http.HandleFunc("/api/v1/exercise", controllers.GetExercises)
+
 	http.ListenAndServe(":8000", nil)
 
 }
